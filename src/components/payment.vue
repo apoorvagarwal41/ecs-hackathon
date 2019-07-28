@@ -38,7 +38,7 @@
         <v-window-item :value="3">
           <v-card-text justify-center>
             <p class="title center">Amount</p>
-            <div class="text-xs-center">Rs. {{ amount }}</div>
+            <div class="text-xs-center">Rs. {{ totalAmount }}</div>
             <v-btn block color="success" @click="payNow" :loading="loading">Pay Now</v-btn>
           </v-card-text>
         </v-window-item>

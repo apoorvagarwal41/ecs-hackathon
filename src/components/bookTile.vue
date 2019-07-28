@@ -23,6 +23,7 @@
       <v-btn color="green" @click="addToCart(book)" fab small text>
         <v-icon>shopping_cart</v-icon>
       </v-btn>
+      <v-btn color="success" outlined>Rs. {{ book.price }}</v-btn>
       <v-spacer></v-spacer>
       <!-- <v-btn color="success" @click="buy(book)">Buy</v-btn> -->
     </v-card-actions>
