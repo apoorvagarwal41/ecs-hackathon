@@ -20,7 +20,7 @@ export default {
       let totalamount = this.cartEntries.reduce((acc, book) => {
         return acc + book.price * book.count;
       }, 0);
-      this.$emit("total-amount", { totalamount });
+      this.$emit("total-amount", totalamount);
       return totalamount;
     }
   },

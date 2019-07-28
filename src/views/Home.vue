@@ -77,10 +77,10 @@ export default {
     },
     filteredBooks: {
       get() {
-        return this.searchKey == "" ? this.allBooks : this.books;
+        return this.searchKey == "" ? [...this.allBooks] : [...this.books];
       },
       set(books) {
-        this.books = books;
+        this.books = [...books];
         this.currentPage = 1;
         this.setVisibleBooks();
       }
@@ -116,9 +116,10 @@ export default {
   methods: {
     setVisibleBooks() {
       const m = [];
-      const sortedBooks = this.sortByRating
-        ? this.filteredBooks.sort((a, b) => b.average_rating - a.average_rating)
-        : this.filteredBooks;
+      let sortedBooks = [...this.filteredBooks];
+      if (this.sortByRating) {
+        sortedBooks.sort((a, b) => b.average_rating - a.average_rating);
+      }
       if (this.isBookDataAvailable) {
         const lowerLimit = (this.currentPage - 1) * this.itemsPerPage;
         const upperLimit =

@@ -8,7 +8,6 @@ export const createDB = () => {
     dbReq.onupgradeneeded = function(event) {
       db = event.target.result
       db.createObjectStore('books', { autoIncrement: true })
-      resolve()
     }
     dbReq.onsuccess = function(event) {
       db = event.target.result
