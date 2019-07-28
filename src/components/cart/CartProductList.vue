@@ -17,10 +17,11 @@ export default {
       return this.$store.state.cart;
     },
     totalAmount() {
+      console.log("Calculating total amount");
       let totalamount = this.cartEntries.reduce((acc, book) => {
         return acc + book.price * book.count;
       }, 0);
-      this.$emit("total-amount", totalamount);
+      this.$emit("on-amount", totalamount);
       return totalamount;
     }
   },

@@ -6,7 +6,7 @@
         <v-layout row wrap>
           <v-divider class="mb-4"></v-divider>
           <v-flex xs12>
-            <product-list @total-amount="setAmount"></product-list>
+            <product-list @on-amount="setAmount"></product-list>
           </v-flex>
         </v-layout>
       </v-card-text>
@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     closeCheckout() {
+      console.log("Close Checkout");
       this.openCheckout = false;
     },
     success() {

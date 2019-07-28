@@ -12,6 +12,7 @@
         v-if="checkVisibility('Language Code')"
       >Language : {{book.language_code}}</p>
       <v-rating
+        :readonly="true"
         :value="book.average_rating"
         v-if="checkVisibility('Ratings')"
         background-color="yellow"
