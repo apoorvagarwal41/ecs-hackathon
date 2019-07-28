@@ -110,6 +110,7 @@ export default {
       this.filterPosts();
     }, 300),
     sortByRating: function() {
+      console.log("sorting");
       this.setVisibleBooks();
     }
   },

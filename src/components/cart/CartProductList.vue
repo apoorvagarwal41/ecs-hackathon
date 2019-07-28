@@ -14,19 +14,23 @@ import { mapState } from "vuex";
 export default {
   computed: {
     cartEntries() {
-      return this.$store.state.cart;
-    },
-    totalAmount() {
-      console.log("Calculating total amount");
-      let totalamount = this.cartEntries.reduce((acc, book) => {
-        return acc + book.price * book.count;
-      }, 0);
-      this.$emit("on-amount", totalamount);
-      return totalamount;
+      let entries = [...this.$store.state.cart];
+      this.sendTotalAmount(entries);
+      return entries;
     }
   },
   components: {
     ProductTile
+  },
+  methods: {
+    sendTotalAmount(cartEntries) {
+      console.log("Calculating total amount");
+      var entries = [...cartEntries];
+      let totalamount = entries.reduce((acc, book) => {
+        return acc + book.price * book.count;
+      }, 0);
+      this.$emit("on-amount", totalamount);
+    }
   }
 };
 </script>

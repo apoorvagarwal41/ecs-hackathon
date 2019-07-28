@@ -42,9 +42,8 @@ export default {
     success() {
       console.log("payment complete");
     },
-    setAmount(event, totalamount) {
-      console.log("object");
-      console.log(event, totalamount);
+    setAmount(totalamount) {
+      console.log(totalamount);
       this.amount = totalamount;
     }
   }
