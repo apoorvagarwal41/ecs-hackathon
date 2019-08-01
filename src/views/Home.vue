@@ -117,6 +117,10 @@ export default {
   methods: {
     setVisibleBooks() {
       const m = [];
+      if(this.filteredBooks.length == 0) {
+        this.visibleBooks = []
+        return
+      }
       let sortedBooks = [...this.filteredBooks];
       if (this.sortByRating) {
         sortedBooks.sort((a, b) => b.average_rating - a.average_rating);
